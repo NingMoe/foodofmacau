@@ -1,0 +1,28 @@
+{
+  "name": "foodofmacau",
+  "version": "0.0.1",
+  "description": "Interactive panel on food of Macau",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gestadieu/foodofmacau.git"
+  },
+  "keywords": [
+    "food",
+    "macau",
+    "panel",
+    "interactive"
+  ],
+  "author": "Gerald Estadieu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gestadieu/foodofmacau/issues"
+  },
+  "homepage": "https://github.com/gestadieu/foodofmacau#readme",
+  "devDependencies": {
+    "electron": "^1.7.9"
+  }
+}
