@@ -7,13 +7,36 @@
     <title>Home</title>
 </head>
 <body style="margin:0px;padding:0px">
-    <img src="images/home.png" alt="Food of Macau" style="width:100%;height:100%">
+    <img id="foodimg" src="images/home.png" alt="Food of Macau" style="width:100%;height:100%">
 <!--h1>Hello World!</h1>
     We are using node <script>document.write(process.versions.node)</script>,
     Chrome <script>document.write(process.versions.chrome)</script>,
     and Electron <script>document.write(process.versions.electron)</script>.
   </body-->
     <script>
+    
+    const mqtt = require('mqtt')
+    const client  = mqtt.connect('mqtt://moqtt.duckdns.org', {username: 'usertest', password: 'testuser'})
+    
+    client.on('connect', function () {
+  client.subscribe('info/#')
+  client.subscribe('devices/panels/foodofmacau/pibuttons')
+})
+client.on('message', (topic, msg) => {
+    // let button = JSON.parse(msg.to)
+    console.log(topic, msg)
+    //load the page corresponding to the button pressed
+    // win.loadURL(url.format({
+    //   pathname: path.join(__dirname, 'pages/button_' + button.buttonID + '.html'),
+    //   protocol: 'file:',
+    //   slashes: true
+    // }))
+
+    // OR?????
+    // change the image in the current page.
+    document.getElementById('foodimg').src = 'images/food-001.png'
+  })
+
         // read a button
         
         // from photo to video every 10 sec.

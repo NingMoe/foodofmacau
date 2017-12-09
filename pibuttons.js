@@ -13,7 +13,7 @@ client.on('connect', function () {
   client.publish('devices/panels/foodofmacau/pibuttons', 'online')
 })
 
-const pins = [1,2,3,4,5,6,7,10,11,12,13,14,15,16]
+const pins = [1,2,3,4,5,6,7] //,10,11,12,13,14,15,16]
  
 // Run Board 
 board.on('ready', function() { 
@@ -28,4 +28,8 @@ board.on('ready', function() {
   
   this.on('exit', () => { 
   });
-}); 
+})
+
+client.on('mesage', (topic, msg) => {
+  console.log(topic, ' : ', msg.toString())
+})

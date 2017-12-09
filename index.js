@@ -1,17 +1,15 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
+const mqtt = require('mqtt')
 
-const five = require('johnny-five')
-const raspi = require('raspi-io')
-
-const board = new five.Board({ 
-  io: new raspi(), 
-});
-
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
 let win
+let client  = mqtt.connect('mqtt://moqtt.duckdns.org', {username: 'usertest', password: 'testuser'})
+
+client.on('connect', function () {
+  client.subscribe('info/#')
+  client.subscribe('devices/panels/foodofmacau/pibuttons')
+})
 
 function createWindow () {
   // const area = electron.screen.getPrimaryDisplay().workAreaSize;
@@ -32,8 +30,23 @@ function createWindow () {
     slashes: true
   }))
 
+  client.on('message', (topic, msg) => {
+    // let button = JSON.parse(msg.to)
+    console.log(topic, msg)
+    //load the page corresponding to the button pressed
+    // win.loadURL(url.format({
+    //   pathname: path.join(__dirname, 'pages/button_' + button.buttonID + '.html'),
+    //   protocol: 'file:',
+    //   slashes: true
+    // }))
+
+    // OR?????
+    // change the image in the current page.
+    // document.getElementById('foodimg').src = 'images/food-001.png'
+  })
+
   // Open the DevTools.
-  //win.webContents.openDevTools()
+  win.webContents.openDevTools()
 
   // Emitted when the window is closed.
   win.on('closed', () => {
@@ -58,25 +71,3 @@ app.on('activate', () => {
     createWindow()
   }
 })
-
-board.on('ready', function() { 
-  // P1-12 = 1 = GPIO18
-  // const button = new five.Button({
-  //         pin: 1,
-  //         isPullup : true
-  //       })
-    
-  //       button.on('down', () => {
-  //         console.log('button down');
-  //       })
-      
-  //       button.on('up', () => {
-  //         console.log('button up');
-  //       })
-
-  // // When this script is stopped, turn the LED off 
-  // // This is just for convenience 
-  // this.on('exit', function() { 
-  //         // led.stop().off(); 
-  // }); 
-}); 
