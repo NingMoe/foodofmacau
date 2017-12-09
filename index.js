@@ -2,13 +2,28 @@ const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
 
+const five = require('johnny-five')
+const raspi = require('raspi-io')
+
+const board = new five.Board({ 
+  io: new raspi(), 
+});
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 
 function createWindow () {
+  // const area = electron.screen.getPrimaryDisplay().workAreaSize;
+  
   // Create the browser window.
-  win = new BrowserWindow({width: 800, height: 600})
+  win = new BrowserWindow({
+    backgroundColor: '#000000',
+    frame: false,
+    fullscreen: true,
+    x:0,
+    y:0
+  })
 
   // and load the index.html of the app.
   win.loadURL(url.format({
@@ -18,7 +33,7 @@ function createWindow () {
   }))
 
   // Open the DevTools.
-  win.webContents.openDevTools()
+  //win.webContents.openDevTools()
 
   // Emitted when the window is closed.
   win.on('closed', () => {
@@ -29,27 +44,39 @@ function createWindow () {
   })
 }
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
 app.on('ready', createWindow)
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
-  // On macOS it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
   if (process.platform !== 'darwin') {
     app.quit()
   }
 })
 
 app.on('activate', () => {
-  // On macOS it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
   if (win === null) {
     createWindow()
   }
 })
 
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
+board.on('ready', function() { 
+  // P1-12 = 1 = GPIO18
+  // const button = new five.Button({
+  //         pin: 1,
+  //         isPullup : true
+  //       })
+    
+  //       button.on('down', () => {
+  //         console.log('button down');
+  //       })
+      
+  //       button.on('up', () => {
+  //         console.log('button up');
+  //       })
+
+  // // When this script is stopped, turn the LED off 
+  // // This is just for convenience 
+  // this.on('exit', function() { 
+  //         // led.stop().off(); 
+  // }); 
+}); 

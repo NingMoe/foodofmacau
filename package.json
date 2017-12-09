@@ -6,10 +6,7 @@
   "scripts": {
     "start": "electron index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gestadieu/foodofmacau.git"
-  },
+  "repository": "git+https://github.com/gestadieu/foodofmacau.git",
   "keywords": [
     "food",
     "macau",
@@ -22,11 +19,13 @@
     "url": "https://github.com/gestadieu/foodofmacau/issues"
   },
   "homepage": "https://github.com/gestadieu/foodofmacau#readme",
-  "devDependencies": {
-    "electron": "^1.7.9"
-  },
+  "devDependencies": {},
   "dependencies": {
+    "electron": "^1.7.9",
     "johnny-five": "^0.11.7",
-    "pi-utils": "^0.1.7"
-  }
+    "mqtt": "^2.14.0",
+    "pigpio": "^0.6.3",
+    "raspi-io": "^8.1.0"
+  },
+  "private": null
 }
