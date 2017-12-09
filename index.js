@@ -3,17 +3,14 @@ const {app, BrowserWindow} = electron
 
 const path = require('path')
 const url = require('url')
-const mqtt = require('mqtt')
+const mqtt = require('./mqtt')
 
 let win
-let client  = mqtt.connect('mqtt://moqtt.duckdns.org', {username: 'usertest', password: 'testuser'})
 
-client.on('connect', function () {
-  client.subscribe('info/#')
-  client.subscribe('devices/panels/foodofmacau/pibuttons')
+mqtt.client.on('connect', function () {
+  mqtt.client.subscribe('info/#')
+  mqtt.client.subscribe('devices/panels/foodofmacau/pibuttons')
 })
-
-
 
 function createWindow () {
     const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
@@ -36,7 +33,7 @@ function createWindow () {
     slashes: true
   }))
 
-  client.on('message', (topic, msg) => {
+  mqtt.client.on('message', (topic, msg) => {
     let button = JSON.parse(msg.toString())
     console.log(topic, button.id)
     // load the page corresponding to the button pressed
