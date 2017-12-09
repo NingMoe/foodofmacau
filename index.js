@@ -1,4 +1,6 @@
-const {app, BrowserWindow} = require('electron')
+const electron = require('electron')
+const {app, BrowserWindow} = electron
+
 const path = require('path')
 const url = require('url')
 const mqtt = require('mqtt')
@@ -11,18 +13,22 @@ client.on('connect', function () {
   client.subscribe('devices/panels/foodofmacau/pibuttons')
 })
 
+
+
 function createWindow () {
-  // const area = electron.screen.getPrimaryDisplay().workAreaSize;
-  
+    const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
+
   // Create the browser window.
   win = new BrowserWindow({
     backgroundColor: '#000000',
     frame: false,
     fullscreen: true,
     x:0,
-    y:0
+    y:0,
+    width: width,
+    height: height
   })
-
+  
   // and load the index.html of the app.
   win.loadURL(url.format({
     pathname: path.join(__dirname, 'index.html'),
@@ -31,22 +37,18 @@ function createWindow () {
   }))
 
   client.on('message', (topic, msg) => {
-    // let button = JSON.parse(msg.to)
-    console.log(topic, msg)
-    //load the page corresponding to the button pressed
-    // win.loadURL(url.format({
-    //   pathname: path.join(__dirname, 'pages/button_' + button.buttonID + '.html'),
-    //   protocol: 'file:',
-    //   slashes: true
-    // }))
-
-    // OR?????
-    // change the image in the current page.
-    // document.getElementById('foodimg').src = 'images/food-001.png'
+    let button = JSON.parse(msg.toString())
+    console.log(topic, button.id)
+    // load the page corresponding to the button pressed
+    win.loadURL(url.format({
+      pathname: path.join(__dirname, 'pages/button_' + button.id + '.html'),
+      protocol: 'file:',
+      slashes: true
+    }))
   })
 
   // Open the DevTools.
-  win.webContents.openDevTools()
+  // win.webContents.openDevTools()
 
   // Emitted when the window is closed.
   win.on('closed', () => {

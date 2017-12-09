@@ -97,10 +97,6 @@ bindings@1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/bindings/-/bindings-1.2.1.tgz#14ad6113812d2d37d72e67b4cacb4bb726505f11"
 
-bindings@1.3.0, bindings@~1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/bindings/-/bindings-1.3.0.tgz#b346f6ecf6a95f5a815c5839fc7cdb22502f1ed7"
-
 bl@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/bl/-/bl-1.2.1.tgz#cac328f7bee45730d404b692203fcb590e172d5e"
@@ -204,7 +200,7 @@ combined-stream@^1.0.5, combined-stream@~1.0.5:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@^2.11.0, commander@^2.9.0:
+commander@^2.9.0:
   version "2.12.2"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.12.2.tgz#0f5946c427ed9ec0d91a46bb9def53e54650e555"
 
@@ -259,7 +255,7 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-debug@2.6.9, debug@^2.1.3, debug@^2.2.0, debug@^2.3.2, debug@^2.6.6:
+debug@2.6.9, debug@^2.1.3, debug@^2.2.0, debug@^2.3.2:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   dependencies:
@@ -621,13 +617,6 @@ http-signature@~1.2.0:
     jsprim "^1.2.2"
     sshpk "^1.7.0"
 
-i2c-bus@^1.2.1:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/i2c-bus/-/i2c-bus-1.2.4.tgz#f055d4e0776c8c5e7e4724e07b04e70b6e992bd4"
-  dependencies:
-    bindings "~1.3.0"
-    nan "~2.7.0"
-
 immediate@~3.0.5:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/immediate/-/immediate-3.0.6.tgz#9db1dbd0faf8de6fbe0f5dd5e56bb606280de69b"
@@ -648,10 +637,6 @@ inflight@^1.0.4:
 inherits@2, inherits@^2.0.1, inherits@^2.0.3, inherits@~2.0.0, inherits@~2.0.1, inherits@~2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
-
-ini-builder@^1.0.3:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/ini-builder/-/ini-builder-1.1.1.tgz#4579a1365c73b1ac8ef88ff36f8a72c7bc228e23"
 
 ini@~1.3.0:
   version "1.3.5"
@@ -925,19 +910,15 @@ ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
-nan@^2.4.0, nan@^2.6.2:
+nan@^2.4.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.8.0.tgz#ed715f3fe9de02b57a5e6252d90a96675e1f085a"
-
-nan@~2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/nan/-/nan-2.7.0.tgz#d95bf721ec877e08db276ed3fc6eb78f9083ad46"
 
 nanotimer@0.3.10:
   version "0.3.10"
   resolved "https://registry.yarnpkg.com/nanotimer/-/nanotimer-0.3.10.tgz#e82ee0d00582b23e706bdc00ff39c87daaaddb83"
 
-node-pre-gyp@^0.6.32, node-pre-gyp@^0.6.36:
+node-pre-gyp@^0.6.32:
   version "0.6.39"
   resolved "https://registry.yarnpkg.com/node-pre-gyp/-/node-pre-gyp-0.6.39.tgz#c00e96860b23c0e1420ac7befc5044e1d78d8649"
   dependencies:
@@ -1089,13 +1070,6 @@ pify@^2.0.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
 
-pigpio@^0.6.1, pigpio@^0.6.3:
-  version "0.6.3"
-  resolved "https://registry.yarnpkg.com/pigpio/-/pigpio-0.6.3.tgz#366aa262efbd5681f95dc2ae8d793fcf43212ed3"
-  dependencies:
-    bindings "~1.3.0"
-    nan "~2.7.0"
-
 pinkie-promise@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/pinkie-promise/-/pinkie-promise-2.0.1.tgz#2135d6dfa7a358c069ac9b178776288228450ffa"
@@ -1124,10 +1098,6 @@ progress-stream@^1.1.0:
     speedometer "~0.1.2"
     through2 "~0.2.3"
 
-promirepl@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/promirepl/-/promirepl-1.0.1.tgz#2951aaeba2bf3fe2274ff63a16d94c04ca60872e"
-
 pump@^1.0.0, pump@^1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/pump/-/pump-1.0.3.tgz#5dfe8311c33bbf6fc18261f9f34702c47c08a954"
@@ -1154,83 +1124,6 @@ qs@~6.4.0:
 qs@~6.5.1:
   version "6.5.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.1.tgz#349cdf6eef89ec45c12d7d5eb3fc0c870343a6d8"
-
-raspi-board@^5.0.0, raspi-board@^5.0.1:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/raspi-board/-/raspi-board-5.0.2.tgz#eb73aaf45715e89cb2e6aaf3d314957c71bc23b3"
-
-raspi-gpio@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/raspi-gpio/-/raspi-gpio-5.0.0.tgz#93eedd20d0441de71ff896d228d6ce0b34dbbcef"
-  dependencies:
-    pigpio "^0.6.1"
-    raspi-board "^5.0.0"
-    raspi-peripheral "^2.0.0"
-
-raspi-i2c@^6.0.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/raspi-i2c/-/raspi-i2c-6.1.0.tgz#04a2df5458b68b0749a274393e5135614afe9e3c"
-  dependencies:
-    i2c-bus "^1.2.1"
-    ini-builder "^1.0.3"
-    raspi-board "^5.0.1"
-    raspi-peripheral "^2.0.1"
-
-raspi-io-core@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/raspi-io-core/-/raspi-io-core-2.0.1.tgz#b9467840400a0d085179a5099fce5beb0a6e829a"
-
-raspi-io@^8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/raspi-io/-/raspi-io-8.1.0.tgz#fd6bd1a70105ad1d1279c2ed2c4c22f9b4bfb296"
-  dependencies:
-    raspi "^5.0.1"
-    raspi-board "^5.0.1"
-    raspi-gpio "^5.0.0"
-    raspi-i2c "^6.0.0"
-    raspi-io-core "2.0.1"
-    raspi-led "^2.0.0"
-    raspi-pwm "^5.0.0"
-    raspi-serial "^4.0.0"
-    raspi-soft-pwm "^4.0.1"
-
-raspi-led@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/raspi-led/-/raspi-led-2.0.0.tgz#3a8fa0fbde8f9c579bbdf870d3f5f44f2eb2e566"
-  dependencies:
-    raspi-peripheral "^2.0.1"
-
-raspi-peripheral@2.0.1, raspi-peripheral@^2.0.0, raspi-peripheral@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/raspi-peripheral/-/raspi-peripheral-2.0.1.tgz#f98032035960982aae911aed7052c6474e531cd9"
-  dependencies:
-    raspi-board "^5.0.0"
-
-raspi-pwm@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/raspi-pwm/-/raspi-pwm-5.0.0.tgz#30e4c3fe2583bd25fba9248bdc083eb6c40a269e"
-  dependencies:
-    pigpio "^0.6.1"
-    raspi-peripheral "^2.0.1"
-
-raspi-serial@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/raspi-serial/-/raspi-serial-4.0.0.tgz#489a08de6fe6e434ef8ecbfdc55d34ec869ea1ce"
-  dependencies:
-    raspi-peripheral "^2.0.1"
-    serialport "^5.0.0"
-
-raspi-soft-pwm@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/raspi-soft-pwm/-/raspi-soft-pwm-4.0.1.tgz#affd4e85f0bbd4b314b995199b1f0b7953a13c1a"
-  dependencies:
-    pigpio "^0.6.1"
-    raspi-board "^5.0.1"
-    raspi-peripheral "2.0.1"
-
-raspi@^5.0.1:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/raspi/-/raspi-5.0.2.tgz#0c0019b0c996e6247704cc89cd736d34e5e7d4e7"
 
 rc@^1.1.2, rc@^1.1.7:
   version "1.2.2"
@@ -1377,18 +1270,6 @@ serialport@^4.0.0:
     nan "^2.4.0"
     node-pre-gyp "^0.6.32"
     object.assign "^4.0.3"
-
-serialport@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/serialport/-/serialport-5.0.0.tgz#08a1a494eaf5acdc34b5a7423c1877d997d2a8cf"
-  dependencies:
-    bindings "1.3.0"
-    commander "^2.11.0"
-    debug "^2.6.6"
-    nan "^2.6.2"
-    node-pre-gyp "^0.6.36"
-    promirepl "^1.0.1"
-    safe-buffer "^5.0.1"
 
 set-blocking@~2.0.0:
   version "2.0.0"

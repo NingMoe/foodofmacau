@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+</head>
+<body style="margin:0px;padding:0px">
+    <img id="foodimg" src="../images/food-1.png" alt="Food of Macau" style="width:100%;height:100%">
+    <script>
+        console.log('test')
+    setTimeout( function() {
+        console.log('run setimeout')
+        win.loadURL(url.format({
+            pathname: path.join(__dirname, 'index.html'),
+            protocol: 'file:',
+            slashes: true
+        }))
+    }, 10);
+    </script>
+</body>
+</html>
