@@ -13,7 +13,7 @@ mqtt.client.on('connect', function () {
 
 /**
  * WiringPi Pins number
- * 0: GPIO17 / Pin 11
+ * 0: GPIO17 / Pin 11 
  * 1: GPIO18 / Pin 12
  * 2: GPIO27 / Pin 13
  * 3: GPIO22 / Pin 15
@@ -40,17 +40,28 @@ mqtt.client.on('connect', function () {
  * 30: GPIO0 / Pin 27 NO (I2C)
  * 31: GPIO1 / Pin 28 NO (I2C)
  */
-const pins = ['P1-11','P1-12','P1-29',3,4,5,6,7,10,11,12,13,14] 
+const pins = ['P1-7','P1-11','P1-12','P1-13','P1-15','P1-16','P1-18','P1-19','P1-21','P1-22','P1-24','P1-26'] 
  
+
 // Run Board 
 board.on('ready', function() { 
   
+  // listen to all buttons and publish status on mqtt
   pins.forEach((buttonID) => {
     five.Button({ pin: buttonID, isPullup: true})
       .on('up', () => {
         // send only the Pin number
         let str = JSON.stringify({ 'id': buttonID.split('-')[1].padStart(3,'0')})
         mqtt.client.publish('devices/panels/foodofmacau/pibuttons', str)
+      })
+  })
+
+  // Pin 23 and 29 are recording Yes or No
+  ['P1-23', 'P1-29'].forEach((buttonID) => {
+    five.Button({ pin: buttonID, isPullup: true})
+      .on('up', () => {
+        let str = (buttonID == 'P1-23') ? 'Y' : 'N'
+        mqtt.client.publish('devices/panels/foodofmacau/yon', str)
       })
   })
   

@@ -1,5 +1,5 @@
 # foodofmacau
-Interactive panel on "food of Macau". Includes physical arcade buttons, screens and thermal printer
+Interactive panel on "food of Macau". Includes physical arcade buttons, digital screens and thermal printer.
 
 TODO:
 - lighting the buttons when pressed
