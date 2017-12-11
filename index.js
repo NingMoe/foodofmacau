@@ -35,10 +35,9 @@ function createWindow () {
 
   mqtt.client.on('message', (topic, msg) => {
     let button = JSON.parse(msg.toString())
-    console.log(topic, button.id)
     // load the page corresponding to the button pressed
     win.loadURL(url.format({
-      pathname: path.join(__dirname, 'pages/button_' + button.id + '.html'),
+      pathname: path.join(__dirname, 'pages/page_' + button.id + '.html'),
       protocol: 'file:',
       slashes: true
     }))
