@@ -23,18 +23,21 @@ sudo apt-get update
 sudo apt-get upgrade
 
 1. Node.js
+```bash
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -  
 sudo apt-get install nodejs
-
+```
 2. Yarn
+```
 curl -o- -L https://yarnpkg.com/install.sh | bash 
+```
 
 3. Source code
-```
+```bash
 git clone https://github.com/gestadieu/foodofmacau.git
 cd foodofmacau
 yarn
-´´´
+```
 
 ...wait until packages are installed. 
 
