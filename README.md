@@ -30,9 +30,11 @@ sudo apt-get install nodejs
 curl -o- -L https://yarnpkg.com/install.sh | bash 
 
 3. Source code
-```git clone https://github.com/gestadieu/foodofmacau.git
-```cd foodofmacau
-```yarn
+```
+git clone https://github.com/gestadieu/foodofmacau.git
+cd foodofmacau
+yarn
+´´´
 
 ...wait until packages are installed. 
 
